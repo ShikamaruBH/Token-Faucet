@@ -12,19 +12,23 @@ interface IERC20 {
 }
 
 contract Faucet {
-    address payable owner;
-    IERC20 public token;
+    address payable public owner;
+    IERC20 public quyToken;
+    IERC20 public sbhToken;
+    IERC20 public wibuToken;
 
-    uint256 public withdrawalAmount = 50 * (10**18);
-    uint256 public lockTime = 1 minutes;
+    uint256 public withdrawalAmount = 1000 * (10**18);
+    uint256 public lockTime = 30 seconds;
 
     event Withdrawal(address indexed to, uint256 indexed amount);
     event Deposit(address indexed from, uint256 indexed amount);
 
     mapping(address => uint256) nextAccessTime;
 
-    constructor(address tokenAddress) payable {
-        token = IERC20(tokenAddress);
+    constructor(address quyTokenAddress, address sbhTokenAddress, address wibuTokenAddress) payable {
+        quyToken = IERC20(quyTokenAddress);
+        sbhToken = IERC20(sbhTokenAddress);
+        wibuToken = IERC20(wibuTokenAddress);
         owner = payable(msg.sender);
     }
 
@@ -34,8 +38,8 @@ contract Faucet {
             "Request must not originate from a zero account"
         );
         require(
-            token.balanceOf(address(this)) >= withdrawalAmount,
-            "Insufficient balance in faucet for withdrawal request"
+            quyToken.balanceOf(address(this)) >= withdrawalAmount,
+            "Insufficient balance of token in faucet for withdrawal request"
         );
         require(
             block.timestamp >= nextAccessTime[msg.sender],
@@ -44,7 +48,9 @@ contract Faucet {
 
         nextAccessTime[msg.sender] = block.timestamp + lockTime;
 
-        token.transfer(msg.sender, withdrawalAmount);
+        quyToken.transfer(msg.sender, withdrawalAmount);
+        sbhToken.transfer(msg.sender, withdrawalAmount);
+        wibuToken.transfer(msg.sender, withdrawalAmount);
     }
 
     receive() external payable {
@@ -52,7 +58,7 @@ contract Faucet {
     }
 
     function getBalance() external view returns (uint256) {
-        return token.balanceOf(address(this));
+        return quyToken.balanceOf(address(this));
     }
 
     function setWithdrawalAmount(uint256 amount) public onlyOwner {
@@ -64,8 +70,10 @@ contract Faucet {
     }
 
     function withdraw() external onlyOwner {
-        emit Withdrawal(msg.sender, token.balanceOf(address(this)));
-        token.transfer(msg.sender, token.balanceOf(address(this)));
+        emit Withdrawal(msg.sender, quyToken.balanceOf(address(this)));
+        quyToken.transfer(msg.sender, quyToken.balanceOf(address(this)));
+        sbhToken.transfer(msg.sender, sbhToken.balanceOf(address(this)));
+        wibuToken.transfer(msg.sender, wibuToken.balanceOf(address(this)));
     }
 
     modifier onlyOwner() {

@@ -1,0 +1,64 @@
+
+> bufferutil@4.0.7 install D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\bufferutil
+> node-gyp-build
+
+
+> utf-8-validate@5.0.10 install D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\utf-8-validate
+> node-gyp-build
+
+
+> es5-ext@0.10.62 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\es5-ext
+>  node -e "try{require('./_postinstall')}catch(e){}" || exit 0
+
+
+> web3-bzz@1.8.1 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\web3-bzz
+> echo "WARNING: the web3-bzz api will be deprecated in the next version"
+
+"WARNING: the web3-bzz api will be deprecated in the next version"
+
+> web3-bzz@1.7.4 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\web3\node_modules\web3-bzz
+> echo "WARNING: the web3-bzz api will be deprecated in the next version"
+
+"WARNING: the web3-bzz api will be deprecated in the next version"
+
+> web3-shh@1.8.1 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\web3-shh
+> echo "WARNING: the web3-shh api will be deprecated in the next version"
+
+"WARNING: the web3-shh api will be deprecated in the next version"
+
+> web3@1.8.1 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\@truffle\interface-adapter\node_modules\web3
+> echo "Web3.js 4.x alpha has been released for early testing and feedback. Checkout doc at https://docs.web3js.org/ "
+
+"Web3.js 4.x alpha has been released for early testing and feedback. Checkout doc at https://docs.web3js.org/ "
+
+> web3-shh@1.7.4 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\web3\node_modules\web3-shh
+> echo "WARNING: the web3-shh api will be deprecated in the next version"
+
+"WARNING: the web3-shh api will be deprecated in the next version"
+
+> web3@1.7.4 postinstall D:\COSMOS\Document\Blockchain\Cryptocurrency\erc20-tutorial-block-explorer\ocean-token\node_modules\web3
+> echo "WARNING: the web3-shh and web3-bzz api will be deprecated in the next version"
+
+"WARNING: the web3-shh and web3-bzz api will be deprecated in the next version"
++ @nomiclabs/hardhat-ethers@2.0.0
++ @nomicfoundation/hardhat-network-helpers@1.0.0
++ @nomicfoundation/hardhat-chai-matchers@1.0.0
++ @typechain/hardhat@6.1.2
++ @nomiclabs/hardhat-etherscan@3.0.0
++ @types/chai@4.2.0
++ @typechain/ethers-v5@10.1.0
++ @types/mocha@9.1.0
++ hardhat-gas-reporter@1.0.8
++ ethers@5.4.7
++ solidity-coverage@0.7.21
++ typechain@8.1.0
++ ts-node@10.9.1
++ typescript@4.9.4
++ @ethersproject/providers@5.7.2
+added 654 packages from 538 contributors and audited 977 packages in 267.582s
+
+156 packages are looking for funding
+  run `npm fund` for details
+
+found 4 vulnerabilities (1 moderate, 2 high, 1 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
